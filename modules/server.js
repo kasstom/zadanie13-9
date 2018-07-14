@@ -18,13 +18,7 @@ function start(){
 			break;
 		case '/show' :
 			handlers.show(request, response);
-			break;
-		case '/style.css' :
-			handlers.css(request, response);
-			break;
-		case '/templates/server.jpg' :
-			handlers.backgroundImage(request, response);
-			break;
+			break;		
 		default:
 			handlers.error(request, response);
 		}
