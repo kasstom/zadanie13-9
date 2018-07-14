@@ -45,10 +45,8 @@ exports.error = function(request, response) {
 }
 
 exports.show = function(request, response) {
-	console.log(urlFile);
 	fs.readFile(urlFile, function(error, file) {
 		response.writeHead(200, {"Content-Type": "image/jpg"});
-		console.log(error);
 		response.write(file);
 		response.end();
 	});
