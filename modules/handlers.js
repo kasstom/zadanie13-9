@@ -45,25 +45,9 @@ exports.error = function(request, response) {
 }
 
 exports.show = function(request, response) {
-	fs.readFile(urlFile, "binary", function(error, file) {
+	fs.readFile(urlFile, function(error, file) {
 		response.writeHead(200, {"Content-Type": "image/jpg"});
-		response.write(file, "binary");
-		response.end();
-	});
-}
-
-exports.css = function(request, response){
-	fs.readFile('css/style.css', function(error, file){
-		response.writeHead(200, {"Content-Type": "text/css"});
-		response.write(file, 'binary');
-        response.end();
-	});
-}
-
-exports.backgroundImage = function(request, response){
-	fs.readFile('templates/server.jpg', function(error, file){
-		response.writeHead(200, {"Content-Type": "image/jpg"});
-		response.write(file, "binary");
+		response.write(file);
 		response.end();
 	});
 }
